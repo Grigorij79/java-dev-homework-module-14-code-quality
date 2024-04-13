@@ -43,7 +43,7 @@ public class Game {
         }
     }
 
-    static boolean printRezultGame(byte winner) {
+    private boolean printRezultGame(byte winner) {
         if (winner == 1) {
             System.out.println("You won the game!\nCreated by Shreyas Saha. Thanks for playing!");
             return true;
@@ -57,7 +57,7 @@ public class Game {
         return false;
     }
 
-    static void actionPlayer(char[] box) {
+    private void actionPlayer(char[] box) {
         byte inputSquareNumber;
         while (true) {
             inputSquareNumber = scan.nextByte();
@@ -73,7 +73,7 @@ public class Game {
         }
     }
 
-    static void printPlayingField(char[] box) {
+    private void printPlayingField(char[] box) {
         System.out.println("\n\n " + box[0] + " | " + box[1] + " | " + box[2] + " ");
         System.out.println("-----------");
         System.out.println(" " + box[3] + " | " + box[4] + " | " + box[5] + " ");
@@ -81,7 +81,7 @@ public class Game {
         System.out.println(" " + box[6] + " | " + box[7] + " | " + box[8] + " \n");
     }
 
-    static boolean verificationWinner(char[] box, char symbol) {
+    private boolean verificationWinner(char[] box, char symbol) {
         return (box[0] == symbol && box[1] == symbol && box[2] == symbol)
                 || (box[3] == symbol && box[4] == symbol && box[5] == symbol)
                 || (box[6] == symbol && box[7] == symbol && box[8] == symbol)
@@ -92,7 +92,7 @@ public class Game {
                 || (box[2] == symbol && box[4] == symbol && box[6] == symbol);
     }
 
-    static void actionComputer(char[] box) {
+    private void actionComputer(char[] box) {
         while (true) {
             byte rand;
             rand = (byte) (Math.random() * (9 - 1 + 1) + 1);
@@ -103,7 +103,7 @@ public class Game {
         }
     }
 
-    static boolean checkBoxAvailable(char[] box) {
+    private boolean checkBoxAvailable(char[] box) {
         boolean boxAvailable = false;
         for (int i = 0; i < box.length; i++) {
             if (box[i] != 'X' && box[i] != 'O') {
